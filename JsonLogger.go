@@ -17,7 +17,7 @@ import (
  * @Description:
  * @Time 2021-06-28 09:20:20
  */
-func InitJsonLogsConfig(logPath *string) {
+func InitJsonLogger(logPath *string) {
 	//
 	var lp string
 	if logPath == nil {

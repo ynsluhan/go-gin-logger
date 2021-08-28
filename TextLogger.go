@@ -17,7 +17,7 @@ import (
  * @Description:
  * @Time 2021-06-28 09:20:20
  */
-func InitTextLogs(logPath *string) {
+func InitTextLogger(logPath *string) {
 	var lp string
 	if logPath == nil {
 		lp = GetLogPath()
