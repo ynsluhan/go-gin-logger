@@ -17,6 +17,7 @@ var conf *config.Config
 
 func init() {
 	//
+	conf = config.GetConf()
 	if conf.Server.EnableLogger {
 		initLogger()
 	}
