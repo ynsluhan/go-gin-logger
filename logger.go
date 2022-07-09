@@ -31,12 +31,17 @@ func initLogger() {
 		getwd, _ := os.Getwd()
 		dir = path.Join(getwd, "logs")
 	}
+	// 创建目录
+	err2 := os.MkdirAll(fileName, 0755)
+	if err2 != nil {
+		log.Fatalf("[logger] ERROR 创建日志目录失败 error: %s \n", err2)
+	}
 	// 日志文件
 	fileName = path.Join(dir, "bo.log")
 	// 写入文件
 	src, err := os.OpenFile(fileName, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
-		log.Fatalf("[logger] ERROR 日志文件创建失败 error: %s, file: %s", err, fileName)
+		log.Fatalf("[logger] ERROR 日志文件创建失败 error: %s \n", err)
 	}
 	// 实例化
 	logger = logrus.New()
