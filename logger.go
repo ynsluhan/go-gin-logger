@@ -30,14 +30,13 @@ func initLogger() {
 	if len(dir) == 0 {
 		getwd, _ := os.Getwd()
 		dir = path.Join(getwd, "logs")
-	} else {
-		// 日志文件
-		fileName = path.Join(dir, "bo.log")
 	}
+	// 日志文件
+	fileName = path.Join(dir, "bo.log")
 	// 写入文件
 	src, err := os.OpenFile(fileName, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
-		log.Fatal("[logger] ERROR 日志文件创建失败:", err)
+		log.Fatalf("[logger] ERROR 日志文件创建失败 error: %s, file: %s", err, fileName)
 	}
 	// 实例化
 	logger = logrus.New()
