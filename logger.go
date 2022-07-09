@@ -32,7 +32,7 @@ func initLogger() {
 		dir = path.Join(getwd, "logs")
 	}
 	// 创建目录
-	err2 := os.MkdirAll(fileName, 0755)
+	err2 := os.MkdirAll(dir, 0755)
 	if err2 != nil {
 		log.Fatalf("[logger] ERROR 创建日志目录失败 error: %s \n", err2)
 	}
